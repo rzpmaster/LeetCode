@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,20 @@ namespace Sort
     {
         static void Main(string[] args)
         {
-            var list = RandomNums(100);
-            Sort.SelectionSort(list);
+            var list = RandomNums(10000);
 
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            {
+                //Sort.SelectionSort(list);   // 1116
+                //Sort.InsertionSort(list);   // 1333
+                //Sort.ShellSort(list);       // 10
+                //Sort.MergeSort(list);       // 791
+                //Sort.QuickSort(list);       // 5
+            }
+            stopwatch.Stop();
+
+            Console.WriteLine(stopwatch.ElapsedMilliseconds);
             if (Sort.IsSorted(list))
             {
                 Console.WriteLine("OK");
