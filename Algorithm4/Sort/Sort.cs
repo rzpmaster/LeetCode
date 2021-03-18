@@ -76,8 +76,43 @@ namespace Sort
 
         public static void HeapSort(IComparable[] a)
         {
+            int N = a.Length;
+            for (int k = N / 2; k >= 1; k--)
+            {
+                Sink(a, k, N);
+            }
 
+            while (N > 1)
+            {
+                Exchange(a, 1, N--);
+                Sink(a, 1, N);
+            }
         }
+
+        #region HeapSort
+
+        private static void Sink(IComparable[] a, int k, int N)
+        {
+            while (2 * k < N)
+            {
+                int j = 2 * k;
+                // j j+1 都是 k 的子节点
+                if (j < N && Less(j, j + 1))
+                {
+                    j++;    // 保证 j 指向两个子节点中较大的
+                }
+                // 如果 k 比 j 大，说明父节点大于比较小的子节点了，就不需要再下沉了
+                if (!Less(k, j))
+                {
+                    break;
+                }
+                // 否则，需要继续下沉
+                Exchange(k, j);
+                k = j;
+            }
+        }
+
+        #endregion
 
         private static bool Less(IComparable v, IComparable w)
         {
