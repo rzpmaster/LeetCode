@@ -23,7 +23,11 @@ namespace Sort
 
         public PriorityQueue(TKey[] a)
         {
-
+            pq = new TKey[a.Length + 1];
+            foreach (var item in a)
+            {
+                Insert(item);
+            }
         }
 
         public void Insert(TKey v)
@@ -70,7 +74,7 @@ namespace Sort
 
         private void Sink(int k)
         {
-            while (2 * k < N)
+            while (2 * k <= N)  // 注意判断条件，是带等号的
             {
                 int j = 2 * k;
                 // j j+1 都是 k 的子节点
@@ -91,7 +95,7 @@ namespace Sort
 
         private bool Less(int i, int j)
         {
-            return pq[i].CompareTo(pq[j]) < 0;
+            return pq[i].CompareTo(pq[j]) > 0;
         }
 
         private void Exchange(int i, int j)

@@ -220,17 +220,17 @@ namespace Sort
             {
                 int j = 2 * k;
                 // j j+1 都是 k 的子节点
-                if (j < N && Less(j, j + 1))
+                if (j < N && Less(a[j], a[j + 1]))
                 {
                     j++;    // 保证 j 指向两个子节点中较大的
                 }
                 // 如果 k 比 j 大，说明父节点大于比较小的子节点了，就不需要再下沉了
-                if (!Less(k, j))
+                if (!Less(a[k], a[j]))
                 {
                     break;
                 }
                 // 否则，需要继续下沉
-                Exchange(k, j);
+                Exchange(a, k, j);
                 k = j;
             }
         }
