@@ -200,14 +200,17 @@ namespace Sort
         public static void HeapSort(IComparable[] a)
         {
             int N = a.Length;
+
+            // heapify phase
             for (int k = N / 2; k >= 1; k--)
             {
                 Sink(a, k, N);
             }
 
+            // sortdown phase
             while (N > 1)
             {
-                Exchange(a, 1, N--);
+                Exchange(a, 1 - 1, N-- - 1);
                 Sink(a, 1, N);
             }
         }
@@ -216,21 +219,23 @@ namespace Sort
 
         private static void Sink(IComparable[] a, int k, int N)
         {
-            while (2 * k < N)
+            // 为了不使用额外空间，利用数组第一个元素
+            // 以下所有 比较 和 交换 都应该在 优先队列 的基础上减一
+            while (2 * k <= N)
             {
                 int j = 2 * k;
                 // j j+1 都是 k 的子节点
-                if (j < N && Less(a[j], a[j + 1]))
+                if (j < N && Less(a[j - 1], a[j + 1 - 1]))
                 {
                     j++;    // 保证 j 指向两个子节点中较大的
                 }
                 // 如果 k 比 j 大，说明父节点大于比较小的子节点了，就不需要再下沉了
-                if (!Less(a[k], a[j]))
+                if (!Less(a[k - 1], a[j - 1]))
                 {
                     break;
                 }
                 // 否则，需要继续下沉
-                Exchange(a, k, j);
+                Exchange(a, k - 1, j - 1);
                 k = j;
             }
         }

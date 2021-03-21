@@ -12,32 +12,32 @@ namespace Sort
         static void Main(string[] args)
         {
             #region Sort
-            //var list = RandomNums(10000);
+            var list = RandomNums(10000);
 
-            //Stopwatch stopwatch = new Stopwatch();
-            //stopwatch.Start();
-            //{
-            //    //Sort.SelectionSort(list);   // 1116
-            //    //Sort.InsertionSort(list);   // 1333
-            //    //Sort.ShellSort(list);       // 10
-            //    //Sort.MergeSort(list);       // 791
-            //    //Sort.QuickSort(list);       // 5
-            //    Sort.HeapSort(list);
-            //}
-            //stopwatch.Stop();
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            {
+                //Sort.SelectionSort(list);   // 870
+                //Sort.InsertionSort(list);   // 1100
+                //Sort.ShellSort(list);       // 8
+                //Sort.MergeSort(list);       // 580
+                //Sort.QuickSort(list);       // 5
+                Sort.HeapSort(list);        // 8
+            }
+            stopwatch.Stop();
 
-            //Console.WriteLine(stopwatch.ElapsedMilliseconds);
-            //if (Sort.IsSorted(list))
-            //{
-            //    Console.WriteLine("OK");
-            //} 
+            Console.WriteLine(stopwatch.ElapsedMilliseconds);
+            if (Sort.IsSorted(list))
+            {
+                Console.WriteLine("OK");
+            }
             #endregion
 
             #region PriorityQueue
-            List<char> cl1 = new List<char> { 'a', 'b', 'c', 'f', 'g', 'i', 'i', 'z' };
-            List<char> cl2 = new List<char> { 'b', 'd', 'h', 'p', 'q', 'q' };
-            List<char> cl3 = new List<char> { 'a', 'b', 'e', 'f', 'j', 'n' };
-            MergeList(cl1, cl2, cl3);
+            //List<char> cl1 = new List<char> { 'a', 'b', 'c', 'f', 'g', 'i', 'i', 'z' };
+            //List<char> cl2 = new List<char> { 'b', 'd', 'h', 'p', 'q', 'q' };
+            //List<char> cl3 = new List<char> { 'a', 'b', 'e', 'f', 'j', 'n' };
+            //MergeList(cl1, cl2, cl3);
             #endregion
 
             Console.ReadLine();
