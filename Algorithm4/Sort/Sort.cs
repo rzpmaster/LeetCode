@@ -46,6 +46,7 @@ namespace Sort
 
         /// <summary>
         /// O(N^3/2)
+        /// 本质上就是插入排序，不稳定
         /// </summary>
         /// <param name="a"></param>
         public static void ShellSort(IComparable[] a)
@@ -127,6 +128,7 @@ namespace Sort
 
         /// <summary>
         /// O(nlogn)
+        /// 不稳定
         /// </summary>
         /// <param name="a"></param>
         public static void QuickSort(IComparable[] a)
@@ -197,6 +199,11 @@ namespace Sort
 
         #endregion
 
+        /// <summary>
+        /// O(nlogn)
+        /// 不稳定
+        /// </summary>
+        /// <param name="a"></param>
         public static void HeapSort(IComparable[] a)
         {
             int N = a.Length;
