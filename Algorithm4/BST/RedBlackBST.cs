@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BST
 {
-    class RedBlackBST
+    class RedBlackBST<TKey, TValue> where TKey : IComparable<TKey>
     {
+
     }
 }

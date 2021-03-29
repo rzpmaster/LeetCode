@@ -88,9 +88,8 @@ namespace BST
             else
             {
                 x.val = value;
+                x.N = size(x.left) + size(x.right) + 1;
             }
-
-            x.N = size(x.left) + size(x.right) + 1;
             return x;
         }
 
@@ -107,6 +106,21 @@ namespace BST
             }
 
             return min(x.left);
+        }
+
+        public TKey Max()
+        {
+            return max(root).key;
+        }
+
+        private Node max(Node x)
+        {
+            if (x.right == null)
+            {
+                return x;
+            }
+
+            return max(x.right);
         }
 
         public TKey Floor(TKey key)
@@ -198,6 +212,100 @@ namespace BST
             {
                 return 1 + size(x.left) + rank(x.right, key);
             }
+        }
+
+        public void DeleteMin()
+        {
+            root = delMin(root);
+        }
+
+        private Node delMin(Node x)
+        {
+            if (x.left == null)
+            {
+                return x.right;
+            }
+
+            x.left = delMin(x.left);
+            x.N = size(x.left) + size(x.left) + 1;
+            return x;
+        }
+
+        public void Delete(TKey key)
+        {
+            root = del(root, key);
+        }
+
+        private Node del(Node x, TKey key)
+        {
+            if (x == null)
+            {
+                return null;
+            }
+
+            int cmp = key.CompareTo(x.key);
+            if (cmp == 0)
+            {
+                if (x.left == null)
+                {
+                    return x.right;
+                }
+                if (x.right == null)
+                {
+                    return x.left;
+                }
+
+                Node t = x;
+                x = min(t.right);
+                x.right = delMin(t.right);
+                x.left = t.left;
+                x.N = size(x.left) + size(x.right) + 1;
+            }
+            else if (cmp < 0)
+            {
+                x.left = del(x.left, key);
+            }
+            else /*if (cmp > 0)*/
+            {
+                x.right = del(x.right, key);
+            }
+            return x;
+        }
+
+        public IEnumerable<TKey> Keys()
+        {
+            return Keys(Min(), Max());
+        }
+
+        public IEnumerable<TKey> Keys(TKey lo, TKey hi)
+        {
+            Queue<TKey> queue = new Queue<TKey>();
+            keys(root, queue, lo, hi);
+            return queue;
+        }
+
+        private void keys(Node x, Queue<TKey> queue, TKey lo, TKey hi)
+        {// 中序遍历
+            if (x == null)
+            {
+                return;
+            }
+
+            int cmpLo = lo.CompareTo(x.key);
+            int cmpHi = hi.CompareTo(x.key);
+            if (cmpLo < 0)
+            {//查找左子树
+                keys(x.left, queue, lo, hi);
+            }
+            if (cmpLo <= 0 && cmpHi >= 0)
+            {//当前节点
+                queue.Enqueue(x.key);
+            }
+            if (cmpHi > 0)
+            {//查找右子树
+                keys(x.right, queue, lo, hi);
+            }
+
         }
     }
 }
