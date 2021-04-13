@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneralImpl\Comparers.cs" />
+    <Compile Include="GeneralImpl\DLinkedList.cs" />
+    <Compile Include="GeneralImpl\UnweightedEdge.cs" />
+    <Compile Include="GeneralImpl\IEdge.cs" />
+    <Compile Include="GeneralImpl\IGraph.cs" />
+    <Compile Include="GeneralImpl\UndirectedSparseGraph.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,5 +57,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
