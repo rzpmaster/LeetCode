@@ -6,36 +6,15 @@ using System.Threading.Tasks;
 
 namespace Graph
 {
-    abstract class Search
-    {
-        public Search(Graph graph, int s)
-        {
-
-        }
-
-        /// <summary>
-        /// v 和 s 是联通的吗
-        /// </summary>
-        /// <param name="v"></param>
-        /// <returns></returns>
-        public abstract bool Marked(int v);
-
-        /// <summary>
-        /// 和 s 联通的顶点个数
-        /// </summary>
-        /// <returns></returns>
-        public abstract int Count();
-    }
-
-    class DepthFirstSearch : Search
+    class DepthFirstSearch
     {
         private bool[] marked;
         private int count;
 
-        public DepthFirstSearch(Graph graph, int s) : base(graph, s)
+        public DepthFirstSearch(Graph graph, int source)
         {
             this.marked = new bool[graph.Vertices()];
-            dfs(graph, s);
+            dfs(graph, source);
         }
 
         private void dfs(Graph graph, int v)
@@ -51,14 +30,149 @@ namespace Graph
             }
         }
 
-        public override int Count()
+        public int Count()
         {
             return count;
         }
 
-        public override bool Marked(int v)
+        public bool Marked(int v)
         {
             return marked[v];
+        }
+    }
+
+    class DepthFirstSearchPaths
+    {
+        private bool[] marked;
+        private int[] edgeTo;   // 从起点到一个顶点的已知路径上的最后一个顶点
+        private int source;
+
+        public DepthFirstSearchPaths(Graph graph, int source)
+        {
+            this.marked = new bool[graph.Vertices()];
+            this.edgeTo = new int[graph.Vertices()];
+            this.source = source;
+            dfs(graph, source);
+        }
+
+        private void dfs(Graph graph, int v)
+        {
+            marked[v] = true;
+            foreach (var item in graph.Adj(v))
+            {
+                if (!marked[item])
+                {
+                    edgeTo[item] = v;
+                    dfs(graph, item);
+                }
+            }
+        }
+
+        private void dfs2(Graph graph, int v)
+        {
+            Stack<int> stack = new Stack<int>();
+            stack.Push(v);
+
+            int previous = -1;
+            while (stack.Count != 0)
+            {
+                int current = stack.Pop();
+                if (!marked[current])
+                {
+                    if (previous != -1)
+                    {
+                        edgeTo[current] = previous;
+                    }
+                    marked[current] = true;
+
+                    foreach (var item in graph.Adj(current))
+                    {
+                        if (!marked[item])
+                        {
+                            stack.Push(item);
+                        }
+                    }
+                }
+                previous = current;
+
+            }//end while
+        }
+
+        public bool HasPathTo(int v)
+        {
+            return marked[v];
+        }
+
+        IEnumerable<int> PathTo(int v)
+        {
+            Stack<int> path = new Stack<int>();
+            if (!HasPathTo(v))
+            {
+                return path;
+            }
+
+            for (int x = v; x != source; x = edgeTo[x])
+            {
+                path.Push(x);
+            }
+            path.Push(source);
+            return path;
+        }
+    }
+
+    class BreadthFirstSearchPaths
+    {
+        private bool[] marked;
+        private int[] edgeTo;   // 从起点到一个顶点的一致路径上的最后一个顶点
+        private int source;
+
+        public BreadthFirstSearchPaths(Graph graph, int source)
+        {
+            this.marked = new bool[graph.Vertices()];
+            this.edgeTo = new int[graph.Vertices()];
+            this.source = source;
+            bfs(graph, source);
+        }
+
+        private void bfs(Graph graph, int v)
+        {
+            Queue<int> queue = new Queue<int>();
+            marked[v] = true;
+            queue.Enqueue(v);
+            while (queue.Count != 0)
+            {
+                int current = queue.Dequeue();
+                foreach (var item in graph.Adj(current))
+                {
+                    if (!marked[item])
+                    {
+                        edgeTo[item] = current;
+                        marked[item] = true;
+                        queue.Enqueue(item);
+                    }
+                }
+            }//end while
+        }
+
+        public bool HasPathTo(int v)
+        {
+            return marked[v];
+        }
+
+        IEnumerable<int> PathTo(int v)
+        {
+            Stack<int> path = new Stack<int>();
+            if (!HasPathTo(v))
+            {
+                return path;
+            }
+
+            for (int x = v; x != source; x = edgeTo[x])
+            {
+                path.Push(x);
+            }
+            path.Push(source);
+            return path;
         }
     }
 }
