@@ -22,9 +22,11 @@ namespace Graph
 
             Console.WriteLine(graph.ToString());
 
+            DepthFirstSearchPaths depthFirstSearchPaths = new DepthFirstSearchPaths(graph, 0);
+            var path = depthFirstSearchPaths.PathTo(2);
 
-
-
+            DepthFirstSearchPaths depthFirstSearchPaths2 = new DepthFirstSearchPaths(graph, 0, true);
+            var path2 = depthFirstSearchPaths2.PathTo(5);
 
 
             Console.ReadLine();

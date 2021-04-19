@@ -54,6 +54,14 @@ namespace Graph
             this.source = source;
             dfs(graph, source);
         }
+        public DepthFirstSearchPaths(Graph graph, int source, bool model3)
+        {
+            this.marked = new bool[graph.Vertices()];
+            this.edgeTo = new int[graph.Vertices()];
+            this.source = source;
+            dfs3(graph, source);
+        }
+
 
         private void dfs(Graph graph, int v)
         {
@@ -68,32 +76,25 @@ namespace Graph
             }
         }
 
-        private void dfs2(Graph graph, int v)
+        private void dfs3(Graph graph, int v)
         {
-            Stack<int> stack = new Stack<int>();
-            stack.Push(v);
-
-            int previous = -1;
-            while (stack.Count != 0)
+            Stack<int> queue = new Stack<int>();
+            queue.Push(v);
+            while (queue.Count != 0)
             {
-                int current = stack.Pop();
+                int current = queue.Pop();
                 if (!marked[current])
                 {
-                    if (previous != -1)
-                    {
-                        edgeTo[current] = previous;
-                    }
                     marked[current] = true;
-
                     foreach (var item in graph.Adj(current))
                     {
                         if (!marked[item])
                         {
-                            stack.Push(item);
+                            edgeTo[item] = current;
+                            queue.Push(item);
                         }
                     }
                 }
-                previous = current;
 
             }//end while
         }
@@ -103,7 +104,7 @@ namespace Graph
             return marked[v];
         }
 
-        IEnumerable<int> PathTo(int v)
+        public IEnumerable<int> PathTo(int v)
         {
             Stack<int> path = new Stack<int>();
             if (!HasPathTo(v))
@@ -159,7 +160,7 @@ namespace Graph
             return marked[v];
         }
 
-        IEnumerable<int> PathTo(int v)
+        public IEnumerable<int> PathTo(int v)
         {
             Stack<int> path = new Stack<int>();
             if (!HasPathTo(v))
