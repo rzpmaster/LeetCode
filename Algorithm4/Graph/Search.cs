@@ -8,6 +8,11 @@ namespace Graph
 {
     abstract class Search
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="graph">图</param>
+        /// <param name="s">起点</param>
         public Search(Graph graph, int s)
         {
 
@@ -47,6 +52,50 @@ namespace Graph
                 if (!marked[item])
                 {
                     dfs(graph, item);
+                }
+            }
+        }
+
+        public override int Count()
+        {
+            return count;
+        }
+
+        public override bool Marked(int v)
+        {
+            return marked[v];
+        }
+    }
+
+    class BreadthFirstSearch : Search
+    {
+        private bool[] marked;
+        private int count;
+
+        public BreadthFirstSearch(Graph graph, int s) : base(graph, s)
+        {
+            this.marked = new bool[graph.Vertices()];
+            bfs(graph, s);
+        }
+
+        private void bfs(Graph graph, int s)
+        {
+            Queue<int> queue = new Queue<int>();
+            marked[s] = true;
+            count++;
+            queue.Enqueue(s);
+
+            while (queue.Any())
+            {
+                int v = queue.Dequeue();
+                foreach (var item in graph.Adj(v))
+                {
+                    if (!marked[item])
+                    {
+                        count++;
+                        marked[item] = true;
+                        queue.Enqueue(item);
+                    }
                 }
             }
         }

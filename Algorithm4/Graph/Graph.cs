@@ -23,6 +23,15 @@ namespace Graph
             }
         }
 
+        public Graph(List<int[]> edges, int v) : this(v)
+        {
+            edges.Reverse();
+            foreach (var item in edges)
+            {
+                this.AddEdge(item[0], item[1]);
+            }
+        }
+
         /// <summary>
         /// 顶点个数
         /// </summary>

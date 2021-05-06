@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A70FA724-9CAB-4E9B-9385-60E8579C6A09}</ProjectGuid>
+    <ProjectGuid>{9958D487-AFEF-4284-8326-87EC3ED1CF7F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Graph</RootNamespace>
-    <AssemblyName>Graph</AssemblyName>
+    <RootNamespace>ConsoleApp2</RootNamespace>
+    <AssemblyName>ConsoleApp2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,22 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectedComponent.cs" />
-    <Compile Include="GeneralImpl\Comparers.cs" />
-    <Compile Include="GeneralImpl\DLinkedList.cs" />
-    <Compile Include="GeneralImpl\UnweightedEdge.cs" />
-    <Compile Include="GeneralImpl\IEdge.cs" />
-    <Compile Include="GeneralImpl\IGraph.cs" />
-    <Compile Include="GeneralImpl\UndirectedSparseGraph.cs" />
-    <Compile Include="Graph.cs" />
-    <Compile Include="Paths.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search.cs" />
+    <Compile Include="Solution.cs" />
+    <Compile Include="Soluton2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
