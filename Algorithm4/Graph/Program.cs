@@ -12,9 +12,9 @@ namespace Graph
         {
             //TestSearch();
 
-            //TestPaths();
+            TestPaths();
 
-            TestConnectedComponent();
+            //TestConnectedComponent();
 
             Console.ReadLine();
         }
@@ -79,8 +79,9 @@ namespace Graph
             Graph graph = new Graph(edges, 6);
 
             int s = 0;
-            //Paths paths = new DepthFirstPaths(graph, 0);
-            Paths paths = new BreadthFirstPaths(graph, 0);
+            Paths paths = new DepthFirstPaths(graph, 0);
+            //Paths paths = new DepthFirstPaths(graph, 0, true);
+            //Paths paths = new BreadthFirstPaths(graph, 0);
             for (int i = 0; i < graph.Vertices(); i++)
             {
                 Console.Write($"{s} to {i}:");

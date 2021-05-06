@@ -48,6 +48,14 @@ namespace Graph
             dfs(graph, s);
         }
 
+        public DepthFirstPaths(Graph graph, int s, bool mode2) : base(graph, s)
+        {
+            this.marked = new bool[graph.Vertices()];
+            this.edgeTo = new int[graph.Vertices()];
+            this.s = s;
+            dfs2(graph, s);
+        }
+
         private void dfs(Graph graph, int v)
         {
             marked[v] = true;
@@ -57,6 +65,27 @@ namespace Graph
                 {
                     edgeTo[item] = v;   // 记录item的前驱节点为v
                     dfs(graph, item);
+                }
+            }
+        }
+
+        private void dfs2(Graph graph, int v)
+        {
+            Stack<int> stack = new Stack<int>();
+            marked[v] = true;
+            stack.Push(v);
+
+            while (stack.Any())
+            {
+                int current = stack.Pop();
+                foreach (var item in graph.Adj(current))
+                {
+                    if (!marked[item])
+                    {
+                        edgeTo[item] = current;   // 记录前驱节点
+                        marked[item] = true;
+                        stack.Push(item);
+                    }
                 }
             }
         }
