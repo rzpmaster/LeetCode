@@ -46,11 +46,20 @@ namespace Graph
             return id[v] == id[w];
         }
 
+        /// <summary>
+        /// 联通分量标识
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         public int Id(int v)
         {
             return id[v];
         }
 
+        /// <summary>
+        /// 联通分量个数
+        /// </summary>
+        /// <returns></returns>
         public int Count()
         {
             return count;
