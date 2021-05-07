@@ -50,6 +50,7 @@
     <Compile Include="Search.cs" />
     <Compile Include="StrongConnectedComponent.cs" />
     <Compile Include="Topological.cs" />
+    <Compile Include="TransitiveClosure.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
