@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sort
 {
-    class PriorityQueue<TKey> where TKey : IComparable<TKey>
+    public class PriorityQueue<TKey> where TKey : IComparable<TKey>
     {
         private TKey[] pq;  // 注意 pq[0] 不使用
         private int N;

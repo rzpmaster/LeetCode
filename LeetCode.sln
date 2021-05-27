@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Algorithm4\Graph\G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digraph", "Algorithm4\Digraph\Digraph.csproj", "{1E644420-404F-457D-AF74-3FD8CC62FF0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeWeightedDigraph", "Algorithm4\EdgeWeightedDigraph\EdgeWeightedDigraph.csproj", "{09DFD3E5-583D-4440-8D82-2E8F6B4A0AAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeWeightedGraph", "Algorithm4\EdgeWeightedGraph\EdgeWeightedGraph.csproj", "{8D715EC7-00C7-4938-951F-2AB525F14BCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{1E644420-404F-457D-AF74-3FD8CC62FF0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E644420-404F-457D-AF74-3FD8CC62FF0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E644420-404F-457D-AF74-3FD8CC62FF0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09DFD3E5-583D-4440-8D82-2E8F6B4A0AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DFD3E5-583D-4440-8D82-2E8F6B4A0AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DFD3E5-583D-4440-8D82-2E8F6B4A0AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DFD3E5-583D-4440-8D82-2E8F6B4A0AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D715EC7-00C7-4938-951F-2AB525F14BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D715EC7-00C7-4938-951F-2AB525F14BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D715EC7-00C7-4938-951F-2AB525F14BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D715EC7-00C7-4938-951F-2AB525F14BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +79,8 @@ Global
 		{E7EFFABB-6001-46AB-9E28-43C5335C2B1D} = {BEBB7542-F458-4075-95AB-2A48304FCC33}
 		{A70FA724-9CAB-4E9B-9385-60E8579C6A09} = {BEBB7542-F458-4075-95AB-2A48304FCC33}
 		{1E644420-404F-457D-AF74-3FD8CC62FF0F} = {BEBB7542-F458-4075-95AB-2A48304FCC33}
+		{09DFD3E5-583D-4440-8D82-2E8F6B4A0AAB} = {BEBB7542-F458-4075-95AB-2A48304FCC33}
+		{8D715EC7-00C7-4938-951F-2AB525F14BCD} = {BEBB7542-F458-4075-95AB-2A48304FCC33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50DB0674-A0B8-46CC-BF2D-44ECBA30E9C2}
