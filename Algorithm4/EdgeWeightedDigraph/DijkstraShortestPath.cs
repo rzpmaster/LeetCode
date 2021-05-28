@@ -36,5 +36,43 @@ namespace EdgeWeightedDigraph
                 edgeTo[w] = edge;
             }
         }
+
+        private void Relax(EdgeWeightedDigraph digraph, int v)
+        {
+            foreach (var edge in digraph.Adj(v))
+            {
+                int w = edge.To();
+                if (distTo[w] > distTo[v] + edge.Weight())
+                {
+                    distTo[w] = distTo[v] + edge.Weight();
+                    edgeTo[w] = edge;
+                }
+            }
+        }
+
+        public double DisanceTo(int v)
+        {
+            return distTo[v];
+        }
+
+        public bool HasPathTo(int v)
+        {
+            return distTo[v] < double.PositiveInfinity;
+        }
+
+        public IEnumerable<DirectedEdge> PathTo(int v)
+        {
+            if (!HasPathTo(v))
+            {
+                return null;
+            }
+
+            Stack<DirectedEdge> path = new Stack<DirectedEdge>();
+            for (DirectedEdge e = edgeTo[v]; e != null; e = edgeTo[e.From()])
+            {
+                path.Push(e);
+            }
+            return path;
+        }
     }
 }
