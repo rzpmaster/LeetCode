@@ -45,8 +45,15 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solution1.cs" />
-    <Compile Include="Solution2.cs" />
+    <Compile Include="Array\Solution1.cs" />
+    <Compile Include="Array\Solution2.cs" />
+    <Compile Include="Array\Solution3.cs" />
+    <Compile Include="Array\Solution4.cs" />
+    <Compile Include="Array\Solution5.cs" />
+    <Compile Include="Array\Solution6.cs" />
+    <Compile Include="Tree\Solution1.cs" />
+    <Compile Include="Tree\Solution2.cs" />
+    <Compile Include="Tree\TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

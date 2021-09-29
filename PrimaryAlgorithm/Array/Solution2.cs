@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimaryAlgorithm
+namespace PrimaryAlgorithm.Array
     {
     /*
      * 给定一个数组 prices ，其中 prices[i] 是一支给定股票第 i 天的价格。
