@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PrimaryAlgorithm.Array
-    {
+{
     /*
      * 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
 
@@ -13,23 +13,23 @@ namespace PrimaryAlgorithm.Array
      */
 
     class Solution1
-        {
+    {
         public int RemoveDuplicates(int[] nums)
-            {
+        {
             if (nums == null || nums.Length == 0)
-                {
+            {
                 return 0;
-                }
+            }
 
             int slow = 0;
             for (int fast = 1; fast < nums.Length; fast++)
-                {
+            {
                 if (nums[slow] != nums[fast])
-                    {
+                {
                     nums[++slow] = nums[fast];
-                    }
                 }
-            return slow + 1;
             }
+            return slow + 1;
         }
     }
+}

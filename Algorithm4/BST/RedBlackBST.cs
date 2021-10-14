@@ -141,7 +141,7 @@ namespace BST
             {
                 h = rotateLeft(h);
             }
-            if (IsRed(h.left) && IsRed(h.right.right))
+            if (IsRed(h.left) && h.right != null && IsRed(h.right.right))
             {
                 h = rotateRight(h);
             }

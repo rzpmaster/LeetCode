@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PrimaryAlgorithm.Array
-    {
+{
     class Solution5
-        {
+    {
         /*
          请你判断一个 9x9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。
 
@@ -22,9 +22,8 @@ namespace PrimaryAlgorithm.Array
         只需要根据以上规则，验证已经填入的数字是否有效即可。
         */
         public bool IsValidSudoku(char[][] board)
-            {
-
+        {
             return false;
-            }
         }
     }
+}

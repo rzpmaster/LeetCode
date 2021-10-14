@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LinkList\ListNode.cs" />
+    <Compile Include="LinkList\Solution1.cs" />
+    <Compile Include="LinkList\Solution2.cs" />
+    <Compile Include="LinkList\Solution3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Array\Solution1.cs" />
@@ -51,8 +55,13 @@
     <Compile Include="Array\Solution4.cs" />
     <Compile Include="Array\Solution5.cs" />
     <Compile Include="Array\Solution6.cs" />
+    <Compile Include="Sort\Solution1.cs" />
+    <Compile Include="Sort\Solution2.cs" />
     <Compile Include="Tree\Solution1.cs" />
     <Compile Include="Tree\Solution2.cs" />
+    <Compile Include="Tree\Solution3.cs" />
+    <Compile Include="Tree\Solution4.cs" />
+    <Compile Include="Tree\Solution5.cs" />
     <Compile Include="Tree\TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>
