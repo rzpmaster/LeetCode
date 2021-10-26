@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Bentley.GeometryNET;
 
 namespace PrimaryAlgorithm
 {
@@ -24,7 +26,24 @@ namespace PrimaryAlgorithm
 
             //LinkListTest1();
             //LinkListTest2();
-            LinkListTest3();
+            //LinkListTest3();
+
+            //DynamicTest1();
+            DynamicTest2();
+        }
+
+        private static void DynamicTest2()
+        {
+            int[] nums = { 1, 2, 3, 1 };
+            var solution = new Dynamic.Solution3();
+            int result = solution.Rob(nums);
+        }
+
+        private static void DynamicTest1()
+        {
+            int[] prices = { 7, 1, 5, 3, 6, 4 };
+            var solution = new Dynamic.Solution1();
+            int result = solution.MaxProfit(prices);
         }
 
         private static void LinkListTest3()

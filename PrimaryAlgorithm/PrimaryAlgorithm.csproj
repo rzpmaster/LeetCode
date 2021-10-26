@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bentley.GeometryNET.Structs">
+      <HintPath>C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Bentley.GeometryNET.Structs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dynamic\Solution1.cs" />
+    <Compile Include="Dynamic\Solution2.cs" />
+    <Compile Include="Dynamic\Solution3.cs" />
     <Compile Include="LinkList\ListNode.cs" />
     <Compile Include="LinkList\Solution1.cs" />
     <Compile Include="LinkList\Solution2.cs" />
@@ -53,8 +59,6 @@
     <Compile Include="Array\Solution2.cs" />
     <Compile Include="Array\Solution3.cs" />
     <Compile Include="Array\Solution4.cs" />
-    <Compile Include="Array\Solution5.cs" />
-    <Compile Include="Array\Solution6.cs" />
     <Compile Include="Sort\Solution1.cs" />
     <Compile Include="Sort\Solution2.cs" />
     <Compile Include="Tree\Solution1.cs" />
