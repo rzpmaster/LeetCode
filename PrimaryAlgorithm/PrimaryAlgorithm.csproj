@@ -62,10 +62,15 @@
     <Compile Include="Sort\Solution1.cs" />
     <Compile Include="Sort\Solution2.cs" />
     <Compile Include="Tree\Solution1.cs" />
+    <Compile Include="Tree\Solution10.cs" />
     <Compile Include="Tree\Solution2.cs" />
     <Compile Include="Tree\Solution3.cs" />
     <Compile Include="Tree\Solution4.cs" />
     <Compile Include="Tree\Solution5.cs" />
+    <Compile Include="Tree\Solution6.cs" />
+    <Compile Include="Tree\Solution7.cs" />
+    <Compile Include="Tree\Solution8.cs" />
+    <Compile Include="Tree\Solution9.cs" />
     <Compile Include="Tree\TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,9 @@ namespace PrimaryAlgorithm
             //TreeTest1();
             //TreeTest2();
             //TreeTest3();
+            //TreeTest4();
+            //TreeTest5();
+            TreeTest6();
 
             //SortTest1();
             //SortTest2();
@@ -29,7 +32,7 @@ namespace PrimaryAlgorithm
             //LinkListTest3();
 
             //DynamicTest1();
-            DynamicTest2();
+            //DynamicTest2();
         }
 
         private static void DynamicTest2()
@@ -82,6 +85,33 @@ namespace PrimaryAlgorithm
             int[] nums2 = { 2, 5, 6 };
             var solution = new Sort.Solution1();
             solution.Merge(nums1, 3, nums2, 3);
+        }
+
+        private static void TreeTest6()
+        {
+            int[] preorder = { 3, 9, 20, 15, 7 };
+            int[] inorder = { 9, 3, 15, 20, 7 };
+
+            var solution = new Tree.Solution7();
+            solution.BuildTree(preorder, inorder);
+        }
+
+        private static void TreeTest5()
+        {
+            int?[] nums = { 1, 2, 3, null, null, 4, 5, 6, 7 };
+            var root = Tree.TreeHelper.BuildTree(nums);
+
+            var solution = new Tree.Solution10.Codec();
+            var nums2 = solution.serialize(root);
+            var root2 = solution.deserialize(nums2);
+        }
+
+        private static void TreeTest4()
+        {
+            var solution = new Tree.Solution8();
+            int[] nums1 = { 1, 2, 3, 4, 5, 6, 7 };
+            var root = Tree.TreeHelper.BuildTree(nums1);
+            var result = solution.Connect(root);
         }
 
         private static void TreeTest3()

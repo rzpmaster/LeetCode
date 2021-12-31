@@ -53,6 +53,16 @@ namespace PrimaryAlgorithm.Tree
             return root;
         }
 
+        public static TreeNode BuildTree(int[] array)
+        {
+            int?[] nums = new int?[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                nums[i] = array[i];
+            }
+            return BuildTree(nums);
+        }
+
         private static TreeNode CreateNode(int? val)
         {
             if (val == null)
