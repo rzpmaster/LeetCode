@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeWeightedGraph", "Algori
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimaryAlgorithm", "PrimaryAlgorithm\PrimaryAlgorithm.csproj", "{EC4550F3-6998-43F1-87C8-A97901EAAD9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProgramming", "DynamicProgramming\DynamicProgramming\DynamicProgramming.csproj", "{FE4A8AC5-BE25-45D2-BE03-E900DAC47D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily", "Daily\Daily.csproj", "{C5100B74-AC53-46C2-BB47-8C0696A2B27C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,14 @@ Global
 		{EC4550F3-6998-43F1-87C8-A97901EAAD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC4550F3-6998-43F1-87C8-A97901EAAD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC4550F3-6998-43F1-87C8-A97901EAAD9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4A8AC5-BE25-45D2-BE03-E900DAC47D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4A8AC5-BE25-45D2-BE03-E900DAC47D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4A8AC5-BE25-45D2-BE03-E900DAC47D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4A8AC5-BE25-45D2-BE03-E900DAC47D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5100B74-AC53-46C2-BB47-8C0696A2B27C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5100B74-AC53-46C2-BB47-8C0696A2B27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5100B74-AC53-46C2-BB47-8C0696A2B27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5100B74-AC53-46C2-BB47-8C0696A2B27C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

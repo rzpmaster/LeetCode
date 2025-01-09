@@ -22,7 +22,7 @@ namespace PrimaryAlgorithm
             //TreeTest3();
             //TreeTest4();
             //TreeTest5();
-            TreeTest6();
+            //TreeTest6();
 
             //SortTest1();
             //SortTest2();
